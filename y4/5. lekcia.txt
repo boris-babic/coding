@@ -1,0 +1,30 @@
+def gcd(a, b):
+    counter = 0
+    while b:
+        a, b = b, a % b
+        counter +=1
+    print(a, counter)
+def number_of_factors(number):
+    list_of_factors = []
+    for i in range(1, number+1):
+        if number % i ==0:
+            list_of_factors.append(i)
+    return list_of_factors
+def is_prime(number):
+    primes = []
+    factors = number_of_factors(number)
+    if len(factors) <= 2:
+        return True
+    else:
+        return False   
+def all_primes(first, last):
+    primes = []
+    for i in range(first, last +1):
+        if is_prime(i):
+            primes.append(i)
+    return primes
+def sum_of_powers(number):
+    value = 2 ** (number) - 1
+    return value
+
+print(*all_primes(1, 999))

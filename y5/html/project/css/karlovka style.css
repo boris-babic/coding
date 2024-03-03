@@ -1,0 +1,161 @@
+body {
+    background-color: #88BDBC;
+    overflow-x: hidden;
+  }
+  
+a.icon {
+    text-decoration: none; /* Remove underline */
+  }
+  
+  /* Style the social network icons */
+a.icon svg {
+    width: 1.5em; /* Adjust the size of the icons */
+    height: 1.5em;
+    margin: 0 0.2em; /* Add some spacing between icons */
+  }
+  
+#headerNav {
+    background-color: #112D32;
+    padding: 10px; /* Add some padding for better spacing */
+    width: 100%;
+  }
+  
+#headerNav .navbar-nav {
+    text-align: center; /* Center the navbar items */
+  }
+  
+#headerNav .nav-link {
+    color: #ffffff;
+    font-size: 20px; /* Adjust the font size */
+  }
+  
+@media screen and (min-width: 992px) {
+    .nav-item {
+      line-height: 80px;
+      padding: 0px;
+      text-align: center;
+      
+    }
+  }
+  
+footer {
+    background-color: #254E58;
+    color: #ffffff; /* Set text color for better visibility */
+    width: 100%;
+  }
+  
+  .social {
+    background-color: #4f4a41;
+  }
+  .social-icons{
+    margin-top:auto;
+    align-items: baseline;
+  
+  }
+  @media screen and (min-width: 992px) {
+    .social-icons {
+      text-align: end;
+    }
+  }
+hr {
+    width: 60px;
+    background-color: #ffffff;
+    height: 2px;
+  }
+  
+.Copyright {
+    background-color: #112D32;
+  }
+  
+li.active.nav-item {
+    text-decoration-line: underline;
+    text-decoration-color: #ffffff;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+  }
+  
+  ul.results {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  
+  li.result {
+    padding: 0;
+  }
+  
+  img {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease;
+  }
+  
+  ul.results:is(:hover, :focus-within) img {
+    opacity: calc(0.1 + (var(--active-lerp, 0) * 0.9));
+    filter: grayscale(calc(1 - var(--active-lerp, 0)));
+  }
+  
+  :root {
+    --lerp-0: 1;
+    --lerp-1: 0.5787037;
+    --lerp-2: 0.2962963;
+    --lerp-3: 0.125;
+    --lerp-4: 0.037037;
+    --lerp-5: 0.0046296;
+    --lerp-6: 0;
+  }
+  
+  a.pic {
+    outline-offset: 4px;
+  }
+  
+  li.result {
+    flex: calc(0.1 + (var(--active-lerp, 0) * 1));
+    transition: flex 0.2s ease;
+  }
+  
+  li.result:is(:hover, :focus-within) {
+    --active-lerp: var(--lerp-0);
+    z-index: 7;
+  }
+  li.result:has( + li.result:is(:hover, :focus-within)),
+  li.result:is(:hover, :focus-within) + li.result {
+    --active-lerp: var(--lerp-1);
+    z-index: 6;
+  }
+  li.result:has( + li.result + li.result:is(:hover, :focus-within)),
+  li.result:is(:hover, :focus-within) + li.result + li.result {
+    --active-lerp: var(--lerp-2);
+    z-index: 5;
+  }
+  li.result:has( + li.result + li.result + li.result:is(:hover, :focus-within)),
+  li.result:is(:hover, :focus-within) + li.result + li.result + li.result {
+    --active-lerp: var(--lerp-3);
+    z-index: 4;
+  }
+  li.result:has( + li.result + li.result + li.result + li.result:is(:hover, :focus-within)),
+  li.result:is(:hover, :focus-within) + li.result + li.result + li.result + li.result {
+    --active-lerp: var(--lerp-4);
+    z-index: 3;
+  }
+  li.result:has( + li.result + li.result + li.result + li.result + li.result:is(:hover, :focus-within)),
+  li.result:is(:hover, :focus-within) + li.result + li.result + li.result + li.result + li.result {
+    --active-lerp: var(--lerp-5);
+    z-index: 2;
+  }
+  li.result:has( + li.result + li.result + li.result + li.result + li.result + li.result:is(:hover, :focus-within)),
+  li.result:is(:hover, :focus-within) + li.result + li.result + li.result + li.result + li.result + li.result {
+    --active-lerp: var(--lerp-6);
+    z-index: 1;
+  }
+  
