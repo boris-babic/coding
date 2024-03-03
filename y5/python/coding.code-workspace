@@ -3,6 +3,9 @@
 		{
 			"name": "python",
 			"path": "."
+		},
+		{
+			"path": "../html"
 		}
 	],
 	"settings": {}
