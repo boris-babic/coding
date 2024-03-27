@@ -9,7 +9,7 @@ def display_selection():
     mesiac = combo_mesiace_od.get()
     rok = combo_rok_od.get()
     pocet_dni = days_in_month(mesiac, rok)
-    print(mesiac, rok, pocet_dni)
+    print(mesiac, rok, pocet_dni, month_to_number(mesiac))
 
 main_window = tk.Tk()
 main_window.config(width=500, height=300)
@@ -34,11 +34,11 @@ button.place(x=50, y=200)
 
 
 def is_leap_year(year):
-    if year % 400 == 0:
+    if int(year) % 400 == 0:
         return True
-    elif year % 100 == 0:
+    elif int(year) % 100 == 0:
         return False
-    elif year % 4 == 0:
+    elif int(year) % 4 == 0:
         return True
     else:
         return False
@@ -65,5 +65,29 @@ def days_in_month(month_name, year):
         return mesiace[month_name_lower]
     else:
         return "Neplatný mesiac"
+
+def month_to_number(month_name):
+    mesiace = {
+        "január": 1,
+        "február": 2,
+        "marec": 3,
+        "apríl": 4,
+        "máj": 5,
+        "jún": 6,
+        "júl": 7,
+        "august": 8,
+        "september": 9,
+        "október": 10,
+        "november": 11,
+        "december": 12
+    }
+    # Convert month name to lowercase to make it case-insensitive
+    month_name_lower = month_name.lower()
+    # Check if the provided month exists in the dictionary
+    if month_name_lower in mesiace:
+        return mesiace[month_name_lower]
+    else:
+        return "Neplatný mesiac"
+    
 
 main_window.mainloop()
