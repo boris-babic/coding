@@ -10,6 +10,7 @@ def display_selection():
     rok = combo_rok_od.get()
     pocet_dni = days_in_month(mesiac, rok)
     print(mesiac, rok, pocet_dni, month_to_number(mesiac))
+    progress_bar(mesiac, rok)
 
 main_window = tk.Tk()
 main_window.config(width=500, height=300)
@@ -31,7 +32,12 @@ label_od = tk.Label(main_window, text="od datumu")
 label_od.place(x=25, y=50)
 button = ttk.Button(text="Hotovo", command=display_selection)
 button.place(x=50, y=200)
+progress = tk.Label(main_window, text="Pre spustenie stlac hotovo")
+progress.place(x=200, y=200)
 
+
+def progress_bar(pocet, celkovo):
+    progress.config(text=f'som na {pocet} polozke z {celkovo} celkovo')
 
 def is_leap_year(year):
     if int(year) % 400 == 0:
